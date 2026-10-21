@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#087f5b">
+  <meta name="description" content="A-Market — oziq-ovqat va kundalik mahsulotlarni qulay narxlarda buyurtma qiling.">
+  <title>A-Market — Onlayn supermarket</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>✦ Har kuni qulay xarid</span>
+      <span>Yetkazib berish: 15 000 so‘mdan</span>
+      <span>Har kuni 08:00–22:00</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="#" aria-label="A-Market bosh sahifa">
+        <span class="logo-icon">A</span>
+        <span>A-Market<small>ONLAYN SUPERMARKET</small></span>
+      </a>
+
+      <form class="search" id="searchForm">
+        <span>⌕</span>
+        <input id="searchInput" type="search"
+          placeholder="Mahsulot nomini yozing..."
+          aria-label="Mahsulot qidirish">
+        <button type="submit">Qidirish</button>
+      </form>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="favoritesBtn" aria-label="Sevimlilar">
+          ♡ <span class="action-label">Sevimlilar</span>
+          <b id="favoriteCount">0</b>
+        </button>
+        <button class="icon-btn cart-header" id="openCart" aria-label="Savatni ochish">
+          🛒 <span class="action-label">Savat</span>
+          <b id="cartCount">0</b>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#products">Barcha mahsulotlar</a>
+      <a href="#products" data-nav-category="meva">Meva-sabzavot</a>
+      <a href="#products" data-nav-category="sut">Sut mahsulotlari</a>
+      <a href="#products" data-nav-category="ichimlik">Ichimliklar</a>
+      <a href="#products" data-nav-category="non">Non va pishiriqlar</a>
+      <a href="#products" data-nav-category="shirinlik">Shirinliklar</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="container hero">
+      <div class="hero-content">
+        <span class="eyebrow">A-MARKET — SIZ UCHUN</span>
+        <h1>Yaxshi xarid.<br><span>Yaxshi kayfiyat.</span></h1>
+        <p>Sevimli mahsulotlaringizni tanlang. Savatga qo‘shing va buyurtmangizni qulay tarzda rasmiylashtiring.</p>
+        <a class="primary-btn hero-btn" href="#products">Xaridni boshlash <span>→</span></a>
+        <div class="hero-benefits">
+          <span>✓ Qulay xarid</span>
+          <span>✓ Ochiq narxlar</span>
+          <span>✓ Oson buyurtma</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-circle"></div>
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=85"
+             alt="Yangi meva va sabzavotlar">
+        <div class="floating-card">
+          <span>🥬</span>
+          <div><strong>Yangi mahsulotlar</strong><small>Kundalik xarid uchun</small></div>
+        </div>
+        <div class="floating-discount">A-Market<br><small>Har kun qulay!</small></div>
+      </div>
+    </section>
+
+    <section class="container benefits">
+      <article class="benefit-card">
+        <span class="benefit-icon">🛍️</span>
+        <div><h3>Oson xarid</h3><p>Mahsulotlarni tez tanlang</p></div>
+      </article>
+      <article class="benefit-card">
+        <span class="benefit-icon">💵</span>
+        <div><h3>Ochiq narxlar</h3><p>Jami summani ko‘ring</p></div>
+      </article>
+      <article class="benefit-card">
+        <span class="benefit-icon">🚚</span>
+        <div><h3>Yetkazib berish</h3><p>Manzilingizni ko‘rsating</p></div>
+      </article>
+      <article class="benefit-card">
+        <span class="benefit-icon">📞</span>
+        <div><h3>Aloqa uchun</h3><p>Telefon raqamingizni kiriting</p></div>
+      </article>
+    </section>
+
+    <section class="container catalog" id="products">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">BIZNING KATALOG</span>
+          <h2>Mahsulotlar</h2>
+          <p>Kerakli mahsulotlaringizni tanlang.</p>
+        </div>
+        <label class="sort-label">
+          Saralash:
+          <select id="sortSelect">
+            <option value="default">Odatiy</option>
+            <option value="price-asc">Arzonidan boshlab</option>
+            <option value="price-desc">Qimmatidan boshlab</option>
+            <option value="name">Nomi bo‘yicha</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="category-list" id="categoryList">
+        <button class="category-chip active" data-category="all">Barchasi</button>
+        <button class="category-chip" data-category="meva">Meva-sabzavot</button>
+        <button class="category-chip" data-category="sut">Sut mahsulotlari</button>
+        <button class="category-chip" data-category="go‘sht">Go‘sht va tuxum</button>
+        <button class="category-chip" data-category="ichimlik">Ichimliklar</button>
+        <button class="category-chip" data-category="non">Non va pishiriqlar</button>
+        <button class="category-chip" data-category="shirinlik">Shirinliklar</button>
+        <button class="category-chip" data-category="oziq">Oziq-ovqat</button>
+        <button class="category-chip" data-category="uy">Uy-ro‘zg‘or</button>
+      </div>
+
+      <div class="results-info">
+        <span id="resultsCount">Mahsulotlar yuklanmoqda...</span>
+        <button class="text-btn hidden" id="clearFilters">Filtrlarni tozalash ✕</button>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <div class="empty-state hidden" id="emptyState">
+        <span>🔎</span>
+        <h3>Mahsulot topilmadi</h3>
+        <p>Boshqa nom yoki kategoriyani sinab ko‘ring.</p>
+        <button class="primary-btn" id="resetSearch">Barchasini ko‘rish</button>
+      </div>
+    </section>
+
+    <section class="container promo">
+      <div>
+        <span class="eyebrow">A-MARKET TAVSIYA QILADI</span>
+        <h2>Xaridingizni bugun boshlang!</h2>
+        <p>Mahsulotlarni tanlang, savatni tekshiring va buyurtma formasini to‘ldiring.</p>
+        <a href="#products" class="promo-link">Mahsulotlarni ko‘rish →</a>
+      </div>
+      <div class="promo-emoji">🛒🥦🍎</div>
+    </section>
+
+    <section class="container about-section">
+      <div>
+        <span class="eyebrow">NIMA UCHUN A-MARKET?</span>
+        <h2>Kundalik xaridlar — bir joyda</h2>
+      </div>
+      <p>A-Market sizga mahsulotlarni ko‘rish, narxlarni solishtirish, savat tuzish va buyurtma ma’lumotlarini kiritish imkonini beruvchi onlayn supermarket namunasidir.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-main">
+      <div>
+        <a class="logo footer-logo" href="#">
+          <span class="logo-icon">A</span>
+          <span>A-Market<small>ONLAYN SUPERMARKET</small></span>
+        </a>
+        <p>Kundalik xaridlaringiz uchun qulay onlayn katalog.</p>
+      </div>
+      <div>
+        <h3>Bo‘limlar</h3>
+        <a href="#products">Mahsulotlar</a>
+        <a href="#products" data-footer-category="meva">Meva-sabzavot</a>
+        <a href="#products" data-footer-category="sut">Sut mahsulotlari</a>
+      </div>
+      <div>
+        <h3>Xaridor uchun</h3>
+        <a href="#products">Xaridni boshlash</a>
+        <button class="footer-link" id="footerCart">Savatni ko‘rish</button>
+        <a href="#orderInfo">Buyurtma haqida</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="currentYear"></span> A-Market</span>
+      <span>Mahsulot narxlari namuna sifatida kiritilgan.</span>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Xarid savati" aria-hidden="true">
+    <div class="drawer-header">
+      <div><h2>Sizning savatingiz</h2><p id="drawerSubtitle">0 ta mahsulot</p></div>
+      <button class="close-btn" id="closeCart" aria-label="Yopish">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty">
+      <span>🛒</span><h3>Savatingiz hozircha bo‘sh</h3>
+      <p>Mahsulotlarni tanlab, savatga qo‘shing.</p>
+      <button class="primary-btn" id="continueShopping">Xaridni davom ettirish</button>
+    </div>
+    <div class="cart-summary" id="cartSummary">
+      <div class="summary-row"><span>Mahsulotlar jami</span><strong id="subtotal">0 so‘m</strong></div>
+      <div class="summary-row"><span>Yetkazib berish</span><strong id="deliveryPrice">0 so‘m</strong></div>
+      <p class="delivery-note" id="deliveryNote"></p>
+      <div class="summary-total"><span>Jami to‘lov</span><strong id="grandTotal">0 so‘m</strong></div>
+      <button class="primary-btn checkout-btn" id="goCheckout">Buyurtma berish →</button>
+      <p class="secure-note">Buyurtma yuborishdan oldin ma’lumotlaringizni tekshiring.</p>
+    </div>
+  </aside>
+
+  <section class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" aria-hidden="true">
+    <div class="modal-header">
+      <div><span class="eyebrow">OXIRGI QADAM</span><h2 id="checkoutTitle">Buyurtmani rasmiylashtirish</h2></div>
+      <button class="close-btn" id="closeCheckout" aria-label="Yopish">✕</button>
+    </div>
+
+    <div class="checkout-body">
+      <form id="checkoutForm">
+        <label for="customerName">Ism va familiya *</label>
+        <input id="customerName" name="name" type="text" minlength="2" maxlength="80" autocomplete="name" placeholder="Masalan, Ali Valiyev" required>
+
+        <label for="customerPhone">Telefon raqami *</label>
+        <input id="customerPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 90 123 45 67" required>
+
+        <label for="customerAddress">Yetkazib berish manzili *</label>
+        <textarea id="customerAddress" name="address" rows="3" minlength="5" maxlength="300" autocomplete="street-address" placeholder="Shahar, ko‘cha, uy, xonadon" required></textarea>
+
+        <label for="deliveryTime">Yetkazib berish vaqti</label>
+        <select id="deliveryTime" name="time">
+          <option value="Imkon qadar tez">Imkon qadar tez</option>
+          <option value="10:00–13:00">10:00–13:00</option>
+          <option value="13:00–16:00">13:00–16:00</option>
+          <option value="16:00–19:00">16:00–19:00</option>
+          <option value="19:00–22:00">19:00–22:00</option>
+        </select>
+
+        <label for="paymentMethod">To‘lov usuli</label>
+        <select id="paymentMethod" name="payment">
+          <option value="Yetkazilganda naqd">Yetkazilganda naqd</option>
+          <option value="Yetkazilganda karta">Yetkazilganda karta (do‘konda qo‘llab-quvvatlansa)</option>
+        </select>
+
+        <label for="orderComment">Qo‘shimcha izoh (ixtiyoriy)</label>
+        <textarea id="orderComment" name="comment" rows="2" maxlength="500" placeholder="Kuryer uchun izoh..."></textarea>
+
+        <div class="checkout-total">
+          <span>To‘lanadigan jami</span>
+          <strong id="checkoutTotal">0 so‘m</strong>
+        </div>
+        <p class="form-disclaimer">Bu demo versiyada buyurtma faqat shu brauzerda saqlanadi. Do‘konga avtomatik yuborilmaydi va onlayn to‘lov olinmaydi.</p>
+        <button class="primary-btn checkout-submit" type="submit">Buyurtmani tasdiqlash</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="success-modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle" aria-hidden="true">
+    <button class="close-btn success-close" id="closeSuccess" aria-label="Yopish">✕</button>
+    <div class="success-icon">✓</div>
+    <h2 id="successTitle">Buyurtma saqlandi!</h2>
+    <p id="successMessage"></p>
+    <div class="success-order-details" id="successDetails"></div>
+    <p class="form-disclaimer">Eslatma: bu demo buyurtma. Do‘kon yoki kuryerga yuborilmagan.</p>
+    <button class="primary-btn" id="finishOrder">Xaridni davom ettirish</button>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <button class="mobile-cart hidden" id="mobileCart">
+    🛒 Savat <span id="mobileCartCount">0</span>
+    <strong id="mobileCartTotal">0 so‘m</strong>
+  </button>
+
+  <script src="./js.js"></script>
+</body>
+</html>
